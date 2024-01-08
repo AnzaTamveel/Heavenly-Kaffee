@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Kaffee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            margin-top: 0px;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            /* Hide horizontal scrollbar */
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.086);
+            color: #989494;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            z-index: 1001;
+            position: fixed;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            margin: 10px;
+            bottom: 120px;
+            margin-bottom: -50px;
+            max-width: 200px;
+            /* Adjust the max-width to make the logo bigger */
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            background-color: rgba(74, 49, 17, 0);
+            padding: 30px;
+            margin: 0;
+        }
+
+        nav a {
+       
+           
+            padding: 100px;
+            margin-right: 10px; 
+          
+            border-radius: 10px;
+            text-decoration: none;
+            padding: 10px 25px 10px 25px;
+            color: #fff;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -ms-transition: all 0.4s;
+            -o-transition: all 0.4s;
+        }
+
+        nav a:hover {
+            border: 1px solid #c4c4c4; 
+            background-color: #E1905D;
+            color: #fff;
+        }
+
+        /* Adjust the top value to control the space between the logo and the top edge */
+
+        .sticky-logo {
+            top: 0;
+            bottom: 0px;
+        }
+
+        /* Style for the new section */
+
+        section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+            filter: blur(5px);
+        }
+
+        section {
+            position: relative;
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin-top: 0px;
+            /* Adjust the margin-top to control the space between the header and the section */
+            height: 700px;
+            /* Adjust the height of the section */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            /* Set text color to white */
+            text-align: center;
+            overflow: hidden;
+            /* Hide the part of the video that overflows the section */
+        }
+
+        section h1 {
+            font-family: Brush Script MT, Copperplate, Papyrus, fantasy;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            font-size: 4em;
+            z-index: 1;
+            /* Bring text to the front */
+        }
+
+        section p {
+            text-align: center;
+            z-index: 1;
+            /* Bring text to the front */
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #ba6b37b1;
+            /* Choose your preferred color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            border: 1px solid #c4c4c4; 
+            background-color: #E1905D;
+            background-color: #69595974;
+            /* Darker shade on hover */
+        }
+
+        .header-sticky {
+            background-color: #392416db;
+        }
+
+        .about-content {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            background-image: url('https://as2.ftcdn.net/v2/jpg/02/76/35/39/1000_F_276353920_LYBJg7bylEGmGJJhfFP7waS1kI1jbC4m.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-content-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            position: absolute;
+            width: 50%;
+            left: 0;
+            top: 20%;
+            color: #000000;
+            padding: 20px;
+            padding-left: 50px;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* Spacing between reviews */
+            justify-content: space-around;
+            flex-direction: row;
+        }
+
+        .backgroud-review {
+            
+            background-image: blur(5px) ;
+            background-image: url("reviewimage.webp");
+            background-repeat: no-repeat; 
+            background-size: cover;        
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+            overflow: hidden;
+            color: #FFFFFF;
+        }
+
+
+        .review-heading {
+            font-size: 4em;
+            color: #804c2d;
+            
+            text-shadow: 2px 2px 2px 2px rgb(0, 0, 0);
+            font-family: Brush Script MT, Copperplate, Papyrus, fantasy;
+        }
+
+        .review {
+         
+            font-family: Papyrus, fantasy;
+            text-decoration: solid;
+            background-color: rgba(170, 103, 45, 0.615);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 50px 50px 50px 50px rgba(177, 7, 7, 0.1);
+            height: 200px;
+            width: 50%;
+            margin: 10px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            /* Change the text color to white (or any other color you prefer) */
+        }
+
+        .review h3 {
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+            color: #050404;
+        }
+
+        .review p {
+            color: #000000;
+            font-size: 20px;
+        }
+
+        .description__p {
+            margin-bottom: 10px;
+            font-family: Papyrus, fantasy;
+            font-size: 20px;
+        }
+
+        .description__title {
+            margin-top: 0;
+            margin-bottom: 15px;
+            line-height: 30px;
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item-text {
+            margin: 0;
+            line-height: 22px;
+        }
+
+        .menu-div {
+           
+            
+            background-color: #ebebeb;
+            height: 700px;
+            
+        }
+
+        .menu1 {
+            background-color: #E1905D;
+            padding: 80px 130px 80px 130px;
+            align-content: center;
+            display: table;
+            clear: both;
+        }
+     .table-heading{
+        margin: 5px 0px 5px 0px;
+        font-size: 40px;
+        font-family: Papyrus, fantasy;
+     }
+     .table-pic {
+        padding: -50px -50px -50px -50px;
+
+     }
+     .table-content {
+        font-size: 25px;
+        font-family: 'Times New Roman' ;
+        padding: 0px 10px 0px 10px ;
+        text-align: center;
+        justify-content: space-around;
+     }
+       
+    </style>
+</head>
+
+<body>
+
+    <header id="main-header">
+        <div class="logo-container">
+            <div class="sticky-logo">
+                <img src="logo.png" alt="Your Logo" class="logo">
+            </div>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#About">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="#g">Review </a>
+            <a href="#Menu">Menu</a>
+        </nav>
+    </header>
+    <script>
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            var header = document.getElementById("main-header");
+
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                header.classList.add("header-sticky");
+            } else {
+                header.classList.remove("header-sticky");
+            }
+        }
+    </script>
+    <!-- Section for Home content -->
+
+    <section>
+        <video autoplay muted loop src="background.mp4" title="COFFEE Shop" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></video>
+        <h1>Welcome to Heavenly Kaffee!</h1>
+        <p>Explore our delightful coffee and cozy ambiance. Our chef carefully selects the freshest ingredients to
+            create dishes that not only delight the eye, but also satisfy the most sophisticated palate.
+        </p>
+        <button >Learn More</button>
+        <!-- Add more content as needed -->
+    </section>
+
+
+    <div id="About" class="about-content">
+        <div class="about-content-text">
+            <h2 class="description__title">About Us</h2>
+            <p class="description__p"><br>Welcome to Heavenly Kaffee, where our love for coffee is as strong as the brew
+                we serve. Our journeybegan with a simple desire: to serve the best cup of coffee. From the high-altitude
+                farms in the finest coffee-growing regions, we source the freshest and highest quality beans. Our
+                skilled roasters bring out the balance and rich flavor of the beans right here at Heavenly Kaffee.</p>
+            <p class="description__p">Our passion for coffee is deeply rooted in a respect for its culture and history,
+                its effect on society, and its ability to inspire and foster conversation. We believe in serving not
+                just a cup of coffee, but an experience. Every cup of Heavenly Kaffee tells a story of tradition, taste,
+                and love.</p>
+            <p class="description__p">At Heavenly Kaffee, we are committed to crafting the perfect cup of coffee for you
+                to enjoy. We invite you to join us on this remarkable coffee journey.</p>
+        </div>
+    </div>
+    </div>
+    <div>
+        <!-- Menu Section -->
+        <div id="Menu" class="menu1">
+            <table class="menu-div ">
+               
+                <tr>
+                    <th class="table-pic" > <img src="menu1.jpg" alt="Espresso" width="300" height="300"> </th>
+                    <th class="table-pic" > <img src="menu2.jpg" alt="Cappuccino" width="300" height="300"></th>
+                    <th class="table-pic" ><img src="menu3.jpg" alt="Latte" width="300" height="300"></th>
+                </tr>
+                <tr>
+                    <th class="table-heading" >Espresso</th>
+                    <th class="table-heading" >Cappuccino</th>
+                    <th class="table-heading" >Latte</th>
+                </tr>
+                <tr>
+                    <td class="table-content" >Experience the robust intensity of our Espresso. A potent, concentrated coffee, meticulously
+                        brewed
+                        by forcing hot water through finely-ground premium beans. A true coffee lover's delight.</td>
+                    <td class="table-content" >Savor the harmonious blend of our Cappuccino. A masterful mix of rich Espresso, perfectly
+                        steamed
+                        milk, and a decadent crown of frothed milk. A creamy, luxurious treat for your taste buds.</td>
+                    <td class="table-content" > 
+                        Relish the smooth subtlety of our Latte. A delicate fusion of bold Espresso and velvety steamed
+                        milk.
+                        A soothing, silky beverage that's perfect for any time of the day.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="menu1">
+            <table class="menu-div ">
+               
+                <tr>
+                    <th class="table-pic" > <img src="menu4.jpg" alt="Espresso" width="300" height="300"> </th>
+                    <th class="table-pic" > <img src="menu5.jpg" alt="Cappuccino" width="300" height="300"></th>
+                    <th class="table-pic" ><img src="menu6.jpg" alt="Latte" width="300" height="300"></th>
+                </tr>
+                <tr>
+                    <th class="table-heading" >Americano</th>
+                    <th class="table-heading" >Mocha</th>
+                    <th class="table-heading" >Macchiato</th>
+                </tr>
+                <tr>
+                    <td class="table-content" >Enjoy the refreshing simplicity of our Americano. Rich Espresso diluted with hot water, delivering a
+                        smooth coffee experience with a strong kick.</td>
+                    <td class="table-content" >Indulge in the sweet richness of our Mocha. A delightful blend of Espresso, steamed milk, and
+                        chocolate syrup, topped with whipped cream. A dessert in a cup!</td>
+                    <td class="table-content" > 
+                        Discover the balanced complexity of our Macchiato. A shot of Espresso 'stained' with a dash of frothy
+                    milk. A miniature delight packed with flavor.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    <div id="g" class="backgroud-review">
+        
+        <h2 class="review-heading"><u>Coffee Shop Reviews</u></h2>
+
+        <!-- Example Review 1 -->
+        <div class="review ">
+            <h3><b>Amazing Coffee!</h3>
+            <p>Heavenly Kaffee delivers an unparalleled coffee experience, with meticulously crafted brews and a diverse
+                selection of exquisite blends, making it my top choice for a truly amazing coffee destination. ⭐⭐⭐⭐⭐</p>
+            <p>Rating: 5/5</b></p>
+        </div>
+
+        <!-- Example Review 2 -->
+        <div class="review " >
+            <h3>Friendly Staff</h3>
+            <p><b>The friendly staff at Heavenly Kaffee creates a welcoming atmosphere, ensuring every visit is accompanied
+                by warm smiles and exceptional service. Their genuine hospitality enhances the overall delightful
+                experience. ⭐⭐⭐⭐
+            </p>
+            <p>Rating: 4/5</b></p>
+        </div>
+    </div>
+
+    </div>
+    <footer>
+        <div>
+            <img src="footerimage.png" alt="Girl drinking coffee" height="250px">
+        </div>
+        <div class="footer-content">
+
+
+            <h3>Heavenly Coffee</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo iste corrupti doloribus odio sed!</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2020 Heavenly-Coffee. designed by <span>Anza Tamveel , Hira Sohal and Amna Atiq</span>
+            </p>
+        </div>
+    </footer>
+    </div>
+</body>
+
+</html>

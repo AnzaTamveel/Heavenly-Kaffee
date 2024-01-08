@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            
+            margin: 0;
+            padding: -20px -20px -20px -20px;
+
+            /* Change this color to the desired background color */
+            background-image: url("contact.webp");
+            background-size: cover;
+            background-repeat: no-repeat;
+           
+        }
+
+       
+        footer {
+            background-color: #321313;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        main {
+
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* Box shadow */
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            box-shadow: 0 3px 6px rgba(56, 10, 10, 0.748);
+            
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+
+            background-color: #bce685;
+            color: rgb(77, 15, 20);
+            padding: 10px 15px;
+            border: none;
+
+            cursor: pointer;
+            border-radius: 60px;
+        }
+
+        button:hover {
+            background-color: #3975ba;
+        }
+
+        footer a {
+            color: #17c9cf;
+            /* Change this color to the desired color code */
+            text-decoration: none;
+
+        }
+
+        footer a:hover {
+            color: #e55d00;
+            /* Change this color to the desired hover color code */
+        }
+        main h2 {
+            font-family: 'Times New Roman';
+            font-size: 40px;
+            margin: 100px 0px 10px 700px;
+            color: rgb(255, 255, 255); /* Set the color of the "Contact Us" text to white */
+            text-shadow: 3px 3px 3px rgb(0, 0, 0); /* Add shadow to "Contact Us" text */
+        }
+
+        main p {
+            font-family: 'Times New Roman';
+            font-size: 30px;
+            color: #ffffff;
+            margin: 0px 0px 10px 200px;
+            text-shadow: 3px 3px 3px rgb(0, 0, 0); /* Add shadow to the next line (paragraph) */
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.086);
+            color: #989494;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            z-index: 1001;
+            position: fixed;
+        }
+
+        .logo-container {
+            
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            margin: 10px;
+            bottom: 120px;
+            margin-bottom: -50px;
+            max-width: 200px;
+            /* Adjust the max-width to make the logo bigger */
+            height: auto;
+        }
+
+        nav {
+            font-size: 20px;
+            display: flex;
+            background-color: rgba(253, 253, 253, 0);
+            padding: 30px;
+            margin: 0;
+        }
+        .head {
+            background-color: #844320be;
+        }
+        nav a {
+       
+           
+            padding: 100px;
+            margin-right: 10px; 
+          
+            border-radius: 10px;
+            text-decoration: none;
+            padding: 10px 25px 10px 25px;
+            color: #f9f9f9;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -ms-transition: all 0.4s;
+            -o-transition: all 0.4s;
+        }
+
+        nav a:hover {
+            border: 1px solid #c4c4c4; 
+            background-color: #E1905D;
+            color: #fff;
+        }
+
+        /* Adjust the top value to control the space between the logo and the top edge */
+
+        .sticky-logo {
+            top: 0;
+            bottom: 0px;
+        }
+
+        /* Style for the new section */
+
+        section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+            filter: blur(5px);
+        }
+
+        section {
+            position: relative;
+            padding: 20px;
+            background-color: #000000;
+            margin-top: 0px;
+            /* Adjust the margin-top to control the space between the header and the section */
+            height: 700px;
+            /* Adjust the height of the section */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #000000;
+            /* Set text color to white */
+            text-align: center;
+            overflow: hidden;
+            /* Hide the part of the video that overflows the section */
+        }
+
+        section h1 {
+            font-family: Brush Script MT, Copperplate, Papyrus, fantasy;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            font-size: 4em;
+            z-index: 1;
+            /* Bring text to the front */
+        }
+
+        section p {
+            text-align: center;
+            z-index: 1;
+            /* Bring text to the front */
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #ba6b37b1;
+            /* Choose your preferred color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            border: 1px solid #c4c4c4; 
+            background-color: #E1905D;
+            background-color: #69595974;
+            /* Darker shade on hover */
+        }
+
+        .header-sticky {
+            background-color: #392416db;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <header id="main-header" class="head">
+        <div class="logo-container">
+            <div class="sticky-logo">
+                <img src="logo.png" alt="Your Logo" class="logo">
+            </div>
+        </div>
+        <nav>
+            <b>
+            <a href="#">Home</a>
+            <a href="Hevenly Kaffee.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="Hevenly Kaffee.html">Review </a>
+            <a href="Hevenly Kaffee.html">Menu</a></b>
+        </nav>
+    </header>
+    
+
+    <main>
+        <div>
+        <h2>Contact Us</h2>
+
+        <p>For any inquiries, please contact us by using the contact form below or reach out to us via email or phone.
+        </p>
+
+        <form action="process_form.php" method="post">
+            <label for="name"><b>Name:</b></label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email"><b>Email:</b></label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message"><b>Message:</b></label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit"><b><i>Submit</i></b></button>
+        </form>
+    </div>
+    </main>
+
+    <footer>
+        <p>Contact us via email: <a href="mailto:info@myorganization.com">info@myorganization.com</a></p>
+        <p>Call us: 923214569874</p>
+        <p>Follow us on <a href="https://www.instagram.com/myorganization/" target="_blank">Instagram</a></p>
+    </footer>
+
+</body>
+
+</html>
